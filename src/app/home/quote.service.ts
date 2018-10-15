@@ -17,7 +17,6 @@ export class QuoteService {
   constructor(private http: Http) {}
 
   getRandomQuote(context: RandomQuoteContext): Observable<string> {
-    debugger;
     return this.http.get(routes.quote(context)).pipe(
       map((body: any) => body.value),
       catchError(() => of('Error, could not load joke :-('))
